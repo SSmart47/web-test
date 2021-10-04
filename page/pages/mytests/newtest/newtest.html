@@ -1,0 +1,141 @@
+<!DOCTYPE HTMl>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>WEB TEST</title>
+	<link rel="stylesheet" type="text/css" href="style/styles.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body style="background-color: black;">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><b>New Test</b>
+
+    <!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+  <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+</svg>
+
+Главное-->
+
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" id="id_nav_list">
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="id_btn_add_question" data-toggle="modal" data-target="#newQuestion">Добавить вопрос</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="id_btn_test_settings" data-toggle="modal" data-target="#globalTestSettings">Настройки теста</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="id_btn_save">Сохранить</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="id_btn_back">НАЗАД</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tasks</th>
+      <th scope="col">Variants</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody id="id_question_list">
+    
+  </tbody>
+</table>
+
+<br><br>
+
+<div class="modal fade" id="newQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="border-color: aqua;">
+      <div class="modal-header" style="background-color: black;">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:white;"><my id="id_question_manip_title">New Task</my></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true" style="color: white;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-color: black;" id="id_new_question_content">
+        
+      </div>
+      <div class="modal-footer" style="background-color: black;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">ОТМЕНА</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="id_btn_add_new_question">ДОБАВИТЬ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="globalTestSettings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="border-color: aqua;">
+      <div class="modal-header" style="background-color: black;">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:white;">Test Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true" style="color: white;">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-color: black;">
+        <br>
+        <center>
+
+            <div class="input-container">
+              <input type="text" autocomplete="off" required="" id="id_test_name" />
+              <label>Имя Теста</label>
+            </div>
+
+        </center>
+
+            <div class="switch_box box_1">
+              <input type="checkbox" class="switch_1" id="id_test_timing">
+              <font class="css-font-first">Тест на время</font>
+              <input type="time" class="css-time" id="id_tests_time">
+              <font class="css-font-first">чч/мм</font>
+            </div>
+
+            <div class="switch_box box_1">
+              <input type="checkbox" class="switch_1" id="id_randquestion">
+              <font class="css-font-first">Случайные вопросы</font>
+            </div>
+
+            <div class="switch_box box_1">
+              <input type="checkbox" class="switch_1" id="id_randvariant">
+              <font class="css-font-first">Случайные варианты</font>
+            </div>
+
+      </div>
+      <div class="modal-footer" style="background-color: black;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- TEST SETTINGS
+
+TestName
+Test Timing
+Mark
+Rand Question
+Rand Variants
+
+-->
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

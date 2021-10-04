@@ -1,0 +1,201 @@
+.css-main-logo {
+	color: gray;
+	font-weight: 900;
+	font-size: 30px;
+}
+
+
+.input-container{
+  position:relative;
+  margin-bottom:25px;
+}
+.input-container label{
+  position:absolute;
+  top:0px;
+  left:0px;
+  font-size:16px;
+  color:rgba(255,255,255,0.5);  
+    pointer-event:none;
+  transition: all 0.5s ease-in-out;
+  margin-left: 50px;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:80%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color:#fff;
+}
+.input-container input:focus{ 
+ border:none; 
+ outline:none;
+ border-bottom:2px solid aqua;  
+}
+/*.btn:after{
+  content:"";
+  position:absolute;
+  background:rgba(0,0,0,0.50);
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+}*/
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+  top:-12px;
+  font-size:12px;
+  
+}
+
+.new-question-first {
+	width: 500px;
+}
+
+
+
+
+.custom_radio{
+   margin: 20px;
+}
+.custom_radio input[type="radio"]{
+  display: none;
+}
+.custom_radio input[type="radio"] + label{
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4em;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1em;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.custom_radio input[type="radio"] + label:before,
+.custom_radio input[type="radio"] + label:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  color: white;
+  font-family: Times;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.custom_radio input[type="radio"] + label:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em red;
+}
+.custom_radio input[type="radio"] + label:hover:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.3em white, inset 0 0 0 1em blue;
+}
+.custom_radio input[type="radio"]:checked + label:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em blue;
+}
+
+
+
+.wrapper{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  margin: 50vh auto 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.switch_box{
+	margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 400px;
+  min-width: 400px;
+  height: 50px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* Switch 1 Specific Styles Start */
+
+.box_1{
+  background: black;
+}
+
+input[type="checkbox"].switch_1{
+  font-size: 30px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.5em;
+  height: 0.75em;
+  background: rgba(255,255,255,0.1);
+  border-radius: 3em;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked{
+  background: aqua;
+  }
+  
+  input[type="checkbox"].switch_1:after{
+  position: absolute;
+  content: "";
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+  background: blue;
+  -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+          box-shadow: 0 0 .25em rgba(0,0,0,.3);
+  -webkit-transform: scale(.7);
+          transform: scale(.7);
+  left: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+  left: calc(100% - 0.8em);
+  }
+
+
+  .css-font-first {
+  	margin-left: 10px;
+  	color: rgba(255,255,255,0.5);
+  	font-weight: 700;
+  	font-size: 18px;
+  }
+
+.css-time {
+	margin-left: 10px;
+	border-radius: 10px;
+	outline: none;
+	background-color: rgba(255,255,255,0.1);
+	color: white;
+	text-align: center;
+	font-weight: 500;
+	border: none;
+	height: 35px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+ filter: invert(1);
+}

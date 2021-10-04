@@ -1,0 +1,85 @@
+.css-main-logo {
+	color: gray;
+	font-weight: 900;
+	font-size: 30px;
+}
+
+.css-time-text {
+	font-family: monospace;
+	font-size: 30px;
+	color: white;
+	font-weight: 300;
+	margin-left: 10px;
+}
+
+.css-question {
+	font-size: 24px;
+	font-weight: 400;
+	color: white;
+	background-color: rgba(255,255,255,0.1);
+	text-align: left;
+}
+
+
+.custom_radio{
+   margin: 20px;
+}
+.custom_radio input[type="radio"]{
+  display: none;
+}
+.custom_radio input[type="radio"] + label{
+  position: relative;
+  display: inline-block;
+  padding-left: 1.4em;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1em;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.custom_radio input[type="radio"] + label:before,
+.custom_radio input[type="radio"] + label:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.2em;
+  height: 1.2em;
+  text-align: center;
+  color: white;
+  font-family: Times;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.custom_radio input[type="radio"] + label:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em red;
+}
+.custom_radio input[type="radio"] + label:hover:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.3em white, inset 0 0 0 1em blue;
+}
+.custom_radio input[type="radio"]:checked + label:before {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  box-shadow: inset 0 0 0 0.2em white, inset 0 0 0 1em blue;
+}
+
+.css-label {
+	color: white;
+}
+
+.css-result {
+	color: rgba(255,255,255,0.8);
+	font-size: 36px;
+	font-weight: 900;
+}
+
+.css-res-num {
+	color: rgba(255,255,255,1);
+	font-size: 48px;
+	font-weight: 900;
+}
